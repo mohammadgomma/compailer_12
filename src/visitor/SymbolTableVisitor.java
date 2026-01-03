@@ -78,6 +78,9 @@ public class SymbolTableVisitor implements ASTVisitor<Void> {
 
     @Override
     public Void visitJinjaForBlockNode(JinjaForBlockNode node) {
+        // Define loop variable in current scope (or could create a block scope)
+        symbolTable.define(node.getVariable(), "jinja-loop-var", "unknown", node.getLine(), node.getColumn());
+
         for (ElementNode element : node.getBody()) {
             element.accept(this);
         }
@@ -266,6 +269,9 @@ public class SymbolTableVisitor implements ASTVisitor<Void> {
 
     @Override
     public Void visitCssRule(CssRuleNode node) {
+        for (String selector : node.getSelectors()) {
+            symbolTable.define(selector, "css-selector", "style-rule", node.getLine(), node.getColumn());
+        }
         for (CssDeclarationNode decl : node.getDeclarations()) {
             decl.accept(this);
         }
@@ -274,6 +280,7 @@ public class SymbolTableVisitor implements ASTVisitor<Void> {
 
     @Override
     public Void visitCssDeclaration(CssDeclarationNode node) {
+        symbolTable.define(node.getProperty(), "css-property", "style-decl", node.getLine(), node.getColumn());
         return null;
     }
 

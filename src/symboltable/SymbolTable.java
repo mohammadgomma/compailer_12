@@ -54,25 +54,25 @@ public class SymbolTable {
     }
 
     public void printSymbolTable() {
-        System.out.println("\n" + "=".repeat(80));
+        System.out.println("\n" + "===========================");
         System.out.println("SYMBOL TABLE");
-        System.out.println("=".repeat(80));
+        System.out.println("===========================");
 
         printScopeRecursive(globalScope, 0);
 
-        System.out.println("\n" + "-".repeat(80));
+        System.out.println("\n" + "----------------------------");
         System.out.println("All Symbols Summary:");
-        System.out.println("-".repeat(80));
+        System.out.println("----------------------------");
         for (Symbol symbol : allSymbols) {
             System.out.printf("  %-20s | Type: %-12s | DataType: %-10s | Line: %-4d | Scope: %s\n",
                     symbol.getName(), symbol.getType(), symbol.getDataType(),
                     symbol.getLine(), symbol.getScopeName());
         }
-        System.out.println("=".repeat(80));
+        System.out.println("=============================");
     }
 
     private void printScopeRecursive(Scope scope, int level) {
-        String indent = "  ".repeat(level);
+        String indent = "  "+ level;
         System.out.println(indent + "Scope: " + scope.getName() + " (" + scope.getScopeType() + ")");
 
         for (Symbol symbol : scope.getSymbols().values()) {
