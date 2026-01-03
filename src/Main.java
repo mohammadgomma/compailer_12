@@ -13,30 +13,31 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=".repeat(100));
+        System.out.println("================");
         System.out.println("Flask/Jinja2 Compiler - Group Project");
-        System.out.println("=".repeat(100));
+        System.out.println("================");
 
         String[] testPrograms = {
-                "src/test_programs/test1_products.html",
-                "src/test_programs/test2_add_product.html",
-                "src/test_programs/test3_product_details.html",
-                "src/test_programs/test4_css.html"
+                "C:\\Users\\LENOVO\\IdeaProjects\\cmpailer_pro-master2\\cmpailer_pro-master2\\src\\test_programs\\test1_app.py",
+                "C:\\Users\\LENOVO\\IdeaProjects\\cmpailer_pro-master2\\cmpailer_pro-master2\\src\\test_programs\\test1_products.html",
+                "C:\\Users\\LENOVO\\IdeaProjects\\cmpailer_pro-master2\\cmpailer_pro-master2\\src\\test_programs\\test2_add_product.html",
+                "C:\\Users\\LENOVO\\IdeaProjects\\cmpailer_pro-master2\\cmpailer_pro-master2\\src\\test_programs\\test3_product_details.html",
+                "C:\\Users\\LENOVO\\IdeaProjects\\cmpailer_pro-master2\\cmpailer_pro-master2\\src\\test_programs\\test4_css.html"
         };
 
         for (String testFile : testPrograms) {
             processFile(testFile);
         }
 
-        System.out.println("\n" + "=".repeat(100));
+        System.out.println("\n" + "================");
         System.out.println("Compilation Complete!");
-        System.out.println("=".repeat(100));
+        System.out.println("=============");
     }
 
     private static void processFile(String filename) {
-        System.out.println("\n" + "=".repeat(100));
+        System.out.println("\n" + "==============");
         System.out.println("Processing: " + filename);
-        System.out.println("=".repeat(100));
+        System.out.println("===================");
 
         try {
             String content = readFile(filename);
@@ -55,9 +56,9 @@ public class Main {
             DocumentNode documentNode = (DocumentNode) astBuilder.visit(tree);
 
             // Print AST
-            System.out.println("\n" + "-".repeat(80));
+            System.out.println("\n" + "---------------------------");
             System.out.println("ABSTRACT SYNTAX TREE (AST)");
-            System.out.println("-".repeat(80));
+            System.out.println("------------------------------");
             PrintVisitor printVisitor = new PrintVisitor();
             String astOutput = documentNode.accept(printVisitor);
             System.out.println(astOutput);

@@ -6,7 +6,7 @@ public class PrintVisitor implements ASTVisitor<String> {
     private int indentLevel = 0;
 
     private String indent() {
-        return "  ".repeat(indentLevel);
+        return "  "+indentLevel;
     }
 
     @Override
