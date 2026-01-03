@@ -1,0 +1,353 @@
+====================================================================================================
+Flask/Jinja2 Compiler - Group Project
+====================================================================================================
+
+====================================================================================================
+Processing: src/test_programs/test1_products.html
+====================================================================================================
+
+--------------------------------------------------------------------------------
+ABSTRACT SYNTAX TREE (AST)
+--------------------------------------------------------------------------------
+Document [Line: 1, Column: 0]:
+  Python Program:
+  HTML Element: html (DOCTYPE)
+  Text: "
+"
+  HTML Element: html
+    Text: "
+
+"
+    HTML Element: head
+      Text: "
+    "
+      HTML Element: title
+        Text: "Product List"
+      Text: "
+"
+    Text: "
+
+"
+    HTML Element: body
+      Text: "
+    "
+      HTML Element: div
+        Text: "
+        "
+        HTML Element: h1
+          Text: "Our Products"
+        Text: "
+        "
+        HTML Element: div
+          Text: "
+            "
+          Jinja For Block: product in products
+            Text: "
+            "
+            HTML Element: div
+              Text: "
+                "
+              HTML Element: div
+                Jinja Expression: product.image
+              Text: "
+                "
+              HTML Element: div
+                Jinja Expression: product.name
+              Text: "
+                "
+              HTML Element: div
+                Jinja Expression: product.price
+              Text: "
+            "
+            Text: "
+            "
+          Text: "
+        "
+        Text: "
+    "
+      Text: "
+"
+    Text: "
+
+"
+
+
+================================================================================
+SYMBOL TABLE
+================================================================================
+Scope: global (global)
+
+--------------------------------------------------------------------------------
+All Symbols Summary:
+--------------------------------------------------------------------------------
+================================================================================
+
+====================================================================================================
+Processing: src/test_programs/test2_add_product.html
+====================================================================================================
+
+--------------------------------------------------------------------------------
+ABSTRACT SYNTAX TREE (AST)
+--------------------------------------------------------------------------------
+Document [Line: 1, Column: 0]:
+  Python Program:
+  HTML Element: html (DOCTYPE)
+  Text: "
+"
+  HTML Element: html
+    Text: "
+
+"
+    HTML Element: head
+      Text: "
+    "
+      HTML Element: title
+        Text: "Add Product"
+      Text: "
+"
+    Text: "
+
+"
+    HTML Element: body
+      Text: "
+    "
+      HTML Element: div
+        Text: "
+        "
+        HTML Element: h1
+          Text: "Add New Product"
+        Text: "
+        "
+        HTML Element: form
+          Attribute: method=""POST""
+          Text: "
+            "
+          HTML Element: div
+            Text: "
+                "
+            HTML Element: label
+              Text: "Product Name:"
+            Text: "
+                "
+            HTML Element: input (self-closing)
+              Attribute: type=""text""
+              Attribute: name=""name""
+            Text: "
+            "
+          Text: "
+            "
+          HTML Element: div
+            Text: "
+                "
+            HTML Element: label
+              Text: "Price:"
+            Text: "
+                "
+            HTML Element: input (self-closing)
+              Attribute: type=""number""
+              Attribute: name=""price""
+              Attribute: step=""0.01""
+            Text: "
+            "
+          Text: "
+            "
+          HTML Element: div
+            Text: "
+                "
+            HTML Element: label
+              Text: "Description:"
+            Text: "
+                "
+            HTML Element: textarea
+              Attribute: name=""description""
+            Text: "
+            "
+          Text: "
+            "
+          HTML Element: button
+            Attribute: type=""submit""
+            Text: "Add Product"
+          Text: "
+        "
+        Text: "
+    "
+      Text: "
+"
+    Text: "
+
+"
+
+
+================================================================================
+SYMBOL TABLE
+================================================================================
+Scope: global (global)
+
+--------------------------------------------------------------------------------
+All Symbols Summary:
+--------------------------------------------------------------------------------
+================================================================================
+
+====================================================================================================
+Processing: src/test_programs/test3_product_details.html
+====================================================================================================
+
+--------------------------------------------------------------------------------
+ABSTRACT SYNTAX TREE (AST)
+--------------------------------------------------------------------------------
+Document [Line: 1, Column: 0]:
+  Python Program:
+  HTML Element: html (DOCTYPE)
+  Text: "
+"
+  HTML Element: html
+    Text: "
+
+"
+    HTML Element: head
+      Text: "
+    "
+      HTML Element: title
+        Text: "Product Details"
+      Text: "
+"
+    Text: "
+
+"
+    HTML Element: body
+      Text: "
+    "
+      HTML Element: div
+        Text: "
+        "
+        HTML Element: div
+          Text: "
+            "
+          HTML Element: div
+            Jinja Expression: product.image
+          Text: "
+            "
+          HTML Element: div
+            Text: "
+                "
+            HTML Element: div
+              Jinja Expression: product.name
+            Text: "
+                "
+            HTML Element: div
+              Jinja Expression: product.price
+            Text: "
+                "
+            HTML Element: div
+              Jinja Expression: product.description
+            Text: "
+            "
+          Text: "
+        "
+        Text: "
+
+        "
+        HTML Element: div
+          Text: "Specifications"
+        Text: "
+        "
+        HTML Element: ul
+          Text: "
+            "
+          Jinja For Block: spec in product.specs
+            Text: "
+            "
+            HTML Element: li
+              Jinja Expression: spec
+            Text: "
+            "
+          Text: "
+        "
+        Text: "
+    "
+      Text: "
+"
+    Text: "
+
+"
+
+
+================================================================================
+SYMBOL TABLE
+================================================================================
+Scope: global (global)
+
+--------------------------------------------------------------------------------
+All Symbols Summary:
+--------------------------------------------------------------------------------
+================================================================================
+
+====================================================================================================
+Processing: src/test_programs/test4_css.html
+====================================================================================================
+
+--------------------------------------------------------------------------------
+ABSTRACT SYNTAX TREE (AST)
+--------------------------------------------------------------------------------
+Document [Line: 1, Column: 0]:
+  Python Program:
+  HTML Element: html (DOCTYPE)
+  Text: "
+"
+  HTML Element: html
+    Text: "
+"
+    HTML Element: head
+      Text: "
+    "
+      HTML Element: title
+        Text: "CSS Test"
+      Text: "
+    "
+      Style Element
+        Attribute: type=""text/css""
+        CSS Rule: [body]
+          Declaration: background-color: white
+          Declaration: color: black
+        CSS Rule: [h1]
+          Declaration: font-size: 24px
+          Declaration: margin-bottom: 10px
+        CSS Rule: [.container]
+          Declaration: padding: 20px
+          Declaration: border: 1pxsolidgray
+      Text: "
+"
+    Text: "
+"
+    HTML Element: body
+      Text: "
+    "
+      HTML Element: div
+        Attribute: class=""container""
+        Text: "
+        "
+        HTML Element: h1
+          Text: "Hello CSS"
+        Text: "
+    "
+      Text: "
+"
+    Text: "
+"
+  Text: "
+"
+
+
+================================================================================
+SYMBOL TABLE
+================================================================================
+Scope: global (global)
+
+--------------------------------------------------------------------------------
+All Symbols Summary:
+--------------------------------------------------------------------------------
+================================================================================
+
+====================================================================================================
+Compilation Complete!
+====================================================================================================
